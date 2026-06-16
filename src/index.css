@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+
+:root {
+  /* PRIMARY BACKGROUNDS */
+  --mint-light: #E4F2EB;
+  --mint-mid: #C8E0D2;
+  --sage: #7DB890;
+
+  /* VIBRANT POPS */
+  --teal: #3ABFB3;
+  --crimson: #7b0024;
+
+  /* DARK TONES */
+  --green-dark: #2E5C3E;
+  --green-mid: #4E8C68;
+
+  /* NEUTRAL */
+  --white-warm: #F7F5F0;
+  --white: #FFFFFF;
+
+  /* TEXT */
+  --text-dark: #1A2A22;
+  --text-mid: #3D5A48;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--mint-light); color: var(--text-dark); font-family: 'Inter', sans-serif; }
+img { display: block; width: 100%; object-fit: cover; border-radius: 3px; }
+a { text-decoration: none; }
+section { overflow: hidden; }
+
+/* TYPOGRAPHY */
+h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(42px, 6vw, 78px); letter-spacing: 0.02em; line-height: 1.1; }
+h2 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(30px, 4vw, 52px); line-height: 1.2; }
+h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(20px, 2.5vw, 30px); line-height: 1.3; }
+p, .body-text { font-family: 'Inter', sans-serif; font-weight: 300; font-size: 17px; line-height: 1.85; }
+.overline { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; }
+.caption { font-family: 'Inter', sans-serif; font-weight: 300; font-size: 13px; color: var(--text-mid); }
+
+/* BUTTONS */
+.btn { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; padding: 16px 40px; cursor: pointer; transition: 0.3s ease; display: inline-block; border-radius: 2px; text-align: center; }
+.btn-crimson { background: var(--crimson); color: var(--white); border: none; }
+.btn-crimson:hover { background: #5e001c; transform: translateY(-1px); }
+.btn-teal { background: var(--teal); color: var(--white); border: none; }
+.btn-teal:hover { background: #2ea099; transform: translateY(-1px); }
+.btn-outline-white { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.85); }
+.btn-outline-white:hover { background: rgba(255,255,255,0.15); color: var(--white); }
+.btn-outline-teal { background: transparent; color: var(--teal); border: 1.5px solid var(--teal); }
+.btn-outline-teal:hover { background: var(--teal); color: var(--white); }
+
+/* LAYOUT & COMPONENTS */
+.container { max-width: 1180px; margin: 0 auto; padding: 0 48px; }
+.section-pad { padding: 96px 0; }
+.box-shadow { box-shadow: 0 6px 32px rgba(42, 64, 51, 0.12); }
+
+/* SCROLL ANIMATIONS */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* NAVBAR */
+.navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; background: transparent; padding: 28px 48px; transition: background 0.4s ease, padding 0.4s ease; }
+.navbar.scrolled, .navbar.always-scrolled { background: var(--green-dark); padding: 18px 48px; box-shadow: 0 2px 20px rgba(0,0,0,0.15); }
+.nav-brand-title { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; font-size: 22px; color: var(--white); display: block;}
+.nav-brand-sub { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 9px; letter-spacing: 0.18em; color: var(--teal); display: block; margin-top: 4px; }
+.nav-links { display: flex; gap: 36px; }
+.nav-links a { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--teal); }
+.hamburger { display: none; background: none; border: none; cursor: pointer; }
+.hamburger svg { width: 28px; height: 28px; stroke: var(--white); stroke-width: 2; }
+
+/* MOBILE MENU OVERLAY */
+.mobile-menu-overlay { position: fixed; inset: 0; background: var(--green-dark); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+.mobile-menu-overlay.active { opacity: 1; pointer-events: auto; }
+.close-menu { position: absolute; top: 24px; right: 24px; background: none; border: none; color: var(--white); font-size: 32px; cursor: pointer; }
+.mobile-menu-links { display: flex; flex-direction: column; gap: 24px; text-align: center; }
+.mobile-menu-links a { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 34px; color: var(--white); text-decoration: none; }
+
+/* FOOTER */
+.footer { background: var(--green-dark); padding: 72px 0 0; color: var(--white); }
+.footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; max-width: 1180px; margin: 0 auto; padding: 0 48px 48px; }
+.footer-brand { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic; font-size: 26px; }
+.footer-tagline { font-size: 13px; color: var(--teal); margin-top: 10px; font-weight: 300; }
+.footer-email { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 14px; display: block; font-weight: 300; }
+.footer-col-label { font-size: 10px; letter-spacing: 0.18em; color: var(--teal); margin-bottom: 18px; text-transform: uppercase; }
+.footer-links { display: flex; flex-direction: column; gap: 12px; }
+.footer-links a { font-size: 14px; color: rgba(255,255,255,0.65); font-weight: 300; transition: color 0.3s; }
+.footer-links a:hover { color: var(--teal); }
+.footer-contact a { color: var(--teal); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 20px 0; text-align: center; font-size: 11px; color: rgba(255,255,255,0.3); font-weight: 300; }
+
+/* HERO SECTIONS */
+.page-hero { height: 52vh; width: 100%; position: relative; overflow: hidden; display: flex; justify-content: center; align-items: center; text-align: center; }
+.page-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.page-hero-overlay { position: absolute; inset: 0; z-index: 1; }
+.page-hero-content { z-index: 2; position: relative; padding: 0 24px; }
+.page-hero-content h1 { color: var(--white); margin: 10px 0; }
+.page-hero-subtitle { font-family: 'Inter', sans-serif; font-weight: 300; font-style: italic; font-size: 17px; color: rgba(255,255,255,0.75); }
+
+/* ASYMMETRIC / 2 COLUMN GRIDS */
+.split-section { display: flex; min-height: 640px; }
+.split-half { flex: 1; position: relative; }
+.split-half img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 0; }
+.split-text { padding: 80px 72px; display: flex; flex-direction: column; justify-content: center; }
+
+/* LIGHTBOX */
+.lightbox-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.93); z-index: 9999; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+.lightbox-overlay.active { opacity: 1; pointer-events: auto; }
+.lightbox-img { max-width: 90vw; max-height: 88vh; object-fit: contain; border-radius: 2px; }
+.lightbox-close { position: absolute; top: 24px; right: 32px; background: none; border: none; color: var(--white); font-size: 32px; cursor: pointer; font-family: 'Inter', sans-serif; }
+.lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; padding: 20px; }
+.lightbox-prev { left: 24px; }
+.lightbox-next { right: 24px; }
+.lightbox-nav svg { width: 40px; height: 40px; stroke: var(--white); stroke-width: 2; fill: none; }
+.lightbox-counter { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.6); }
+
+/* GALLERY GRIDS */
+.gallery-grid-hover img { cursor: pointer; transition: transform 0.5s ease; }
+.gallery-grid-hover img:hover { transform: scale(1.03); }
+.gallery-img-wrapper { overflow: hidden; position: relative; border-radius: 3px; }
+.gallery-img-wrapper::after { content: ''; position: absolute; inset: 0; background: rgba(46,92,62,0.25); opacity: 0; transition: opacity 0.5s ease; pointer-events: none; }
+.gallery-img-wrapper:hover::after { opacity: 1; }
+
+/* FORM */
+.input-group { margin-bottom: 28px; }
+.input-label { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-mid); display: block; margin-bottom: 6px; }
+.input-field { width: 100%; border: none; border-bottom: 1.5px solid rgba(46,92,62,0.2); background: transparent; padding: 14px 0; font-family: 'Inter', sans-serif; font-weight: 300; font-size: 16px; color: var(--text-dark); outline: none; transition: border-color 0.25s; }
+.input-field:focus { border-bottom-color: var(--teal); }
+select.input-field { appearance: none; cursor: pointer; padding-right: 24px; }
+
+/* THAI LANGUAGE LARGE FONTS */
+.lang-th .btn { font-size: 16px; padding: 18px 42px; font-weight: 500; }
+.lang-th .nav-links a { font-size: 14px; font-weight: 500; }
+.lang-th .nav-brand-sub { font-size: 11px; }
+.lang-th .mobile-menu-links a { font-size: 42px; }
+.lang-th .footer-links a { font-size: 16px; font-weight: 400; }
+.lang-th .overline { font-size: 14px; font-weight: 500; }
+.lang-th .input-label { font-size: 14px; font-weight: 500; }
+.lang-th .footer-col-label { font-size: 13px; font-weight: 500; }
+.lang-th .nav-links button { font-size: 13px; font-weight: 500; }
+.lang-th label { font-size: 13px !important; font-weight: 600 !important; }
+.lang-th .contact-badge-custom { font-size: 14px !important; font-weight: 500 !important; }
+
+/* MEDIA QUERIES */
+@media (max-width: 900px) {
+  .split-section { flex-direction: column; min-height: auto; }
+  .split-half { min-height: 400px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 600px) {
+  .nav-links { display: none; }
+  .hamburger { display: block; }
+  .section-pad { padding: 60px 0; }
+  h1 { font-size: 42px; }
+  h2 { font-size: 32px; }
+  .container { padding: 0 24px; }
+  .split-text { padding: 60px 24px; }
+}
