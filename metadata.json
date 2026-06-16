@@ -1,0 +1,6 @@
+{
+  "name": "Noble Tara Oasis",
+  "description": "A stunning showcase website for an architect-designed luxury private pool villa in Town in Town, Bangkok, featuring realistic architectural photographs, detailed blueprints, and neighborhood insights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
