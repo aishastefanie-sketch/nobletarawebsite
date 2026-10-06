@@ -52,6 +52,9 @@ export default function Home({ onNavigate }: HomeProps) {
           <p className="body-text reveal visible" style={{ fontFamily: "'Inter', sans-serif" }}>
             {t('Located within the highly sought-after Noble Tara Town in Town community, this architect-designed private pool villa offers a rare combination of privacy, greenery, and convenient city living in the heart of Bangkok. The property has been thoughtfully designed around a private courtyard and swimming pool, creating a sense of calm and seclusion that is increasingly difficult to find within the city. Mature landscaping, abundant natural light, and strong indoor-outdoor connections give the home a distinctive atmosphere that feels more like a private retreat than a conventional Bangkok residence.')}
           </p>
+          <p className="body-text reveal visible" style={{ fontFamily: "'Inter', sans-serif", marginTop: '20px' }}>
+  {t('The villa has been recently renovated with new sliding doors and a new parking garage. The property has never been flooded and was completely unaffected by recent flooding.')}
+</p>
         </div>
       </section>
 
@@ -100,7 +103,7 @@ export default function Home({ onNavigate }: HomeProps) {
       <section style={{ background: 'var(--crimson)', padding: '80px 24px', textAlign: 'center' }}>
         <h2 className="reveal visible" style={{ fontStyle: 'italic', fontWeight: 300, fontSize: '48px', color: 'var(--white)', marginBottom: '16px' }}>{t('Own the Oasis')}</h2>
         <p className="reveal visible" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300, fontSize: '16px', color: 'rgba(255,255,255,0.82)', marginBottom: '36px' }}>
-          {t('23,000,000 THB · Serious enquiries only · Private viewings by appointment.')}
+          {t('24,900,000 THB · Serious enquiries only · Private viewings by appointment.')}
         </p>
         <div className="reveal visible" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <a href="contact.html" onClick={(e) => handleLinkClick(e, 'contact')} className="btn btn-outline-white">{t('Arrange a Private Viewing')}</a>
