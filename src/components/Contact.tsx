@@ -36,7 +36,7 @@ export default function Contact() {
           <span className="overline" style={{ color: 'var(--teal)' }}>{t('NOBLE TARA OASIS')}</span>
           <h1 className="my-2 text-white">{t('Own the Oasis')}</h1>
           <div className="text-4xl md:text-5xl my-4 text-emerald-400 font-serif tracking-wide" style={{ fontStyle: 'italic' }}>
-            23,000,000 THB
+            24,900,000 THB
           </div>
           <p className="max-w-xl mx-auto font-light text-base md:text-lg mb-2 text-white/90" style={{ fontFamily: "'Inter', sans-serif" }}>
             {t('An irreplaceable asset in Noble Tara Town in Town (Zone B).')}
